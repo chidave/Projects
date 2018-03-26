@@ -1,0 +1,40 @@
+***********************************************
+Author: Onyeije Chigozie Davis
+ID#: 0946343
+Project: CIS 3110 Assignment 3: Dining philosophers' problem and memory management
+***********************************************
+
+How to run the program:
+-----------------------
+- Change the directory to the directory containing the program files
+- run "make clean"
+- run "make" to compile both programs, or "make dine" to compile program 1 and "make holes" to compile program 2.
+- if the program compiles successfully:
+	- To run the first program, run ./bin/dine (command-line args)
+	- To run the second program, run ./bin/holes (command-line args)
+	
+	
+Limitations:
+------------
+- I was unable to implement the next fit memory management algorithm
+
+
+Dining Philosophers' Problem
+----------------------------
+	I used semaphores to find a solution to the dining philosophers' problem. I used a semaphore to represent a mutex,
+which controls access to the picking up and putting down of the chopsticks. Each philosopher is also assigned a semaphore 
+to control their behaviour. 
+	Each philosopher has four possible states: EATING, THINKING, HUNGRY, and DONE. Each philosopher starts off thinking. 
+After thinking for a while each philospher becomes hungry and attempts to pick up the chopsticks close to him. The first 
+philosopher to get to the chopsticks triggers the locking of the mutex, so no one is able to access it until the semaphore 
+is unlocked after the individual is done attempting to eat. An individual can only eat when neither of the people beside 
+him are not eating. Each philosopher eats for a while and then drops his chopsticks, then goes back to thinking, then the 
+scenario is repeated with each philosopher until everyone has eaten the maximum number of times.
+
+
+Memory Management
+-----------------
+	The linked list was my preferred data structure for this assignment. I used a struct to represent each process, with each 
+struct containing the process id, size, number of times the processes has been swapped, the location/start point of the process 
+in memory, and the end point of the process in memory. For each algorithm, i used two linked lists, one to act as the ready queue 
+for the processes, and another to act as the memory queue. I used an integer array to represent the available memory. 
