@@ -1,0 +1,255 @@
+html {
+    width: 60%;
+    /*height: 100%;
+    min-height: 100%;*/
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: lightblue;
+}
+body {
+    height: 100%;
+    min-height: 100%;
+    line-height: 1.75;
+    /*background-color: #FFFFFF;*/
+}
+a:link:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
+}
+input[type=submit], button {
+    cursor: pointer;
+    cursor: hand;
+}
+
+@media(max-width: 900px) {
+    html {
+        font-size: 14px !important;
+        width: 80% !important;
+    }
+}
+@media(max-width: 480px) {
+    html {
+        font-size: 12px !important;
+        width: 90% !important;
+    }
+}
+@media(max-width: 320px) {
+    html {
+        font-size: 12px !important;
+        width: 100% !important;
+    }
+}
+
+body {
+	background: #899B8C;
+	font-family: Courier New;
+}
+
+.H1 {
+	position: relative;
+	top: -10px;
+	background: #2721CB;
+}
+
+.status {
+	text-align: center;
+}
+
+#status_panel {
+	overflow-y: scroll;
+	overflow-x: scroll;
+    /*height: 100px;*/
+    resize: none;
+    text-align: center;
+}
+
+#status_label {
+	text-align: center;
+}
+
+.upload {
+	padding: 0% 0% 0% 3%;
+	border-style: groove;
+}
+
+.create {
+	padding: 0% 0% 0% 3%;
+	border-style: groove;
+}
+
+.add {
+	padding: 0% 0% 0% 3%;
+	border-style: groove;
+}
+
+.descendants {
+	padding: 0% 3% 0% 3%;
+	border-style: groove;
+}
+
+.desc_panel {
+	text-align: center;
+}
+
+#desc {
+	overflow-y: scroll;
+    resize: none;
+}
+
+.ancestors {
+	padding: 0% 3% 0% 3%;
+	border-style: groove;
+}
+
+/*.ansc_panel {
+	text-align: center;
+}*/
+
+/*#ansc {
+	overflow-y: scroll;
+    resize: none;
+}*/
+
+.view_form {
+	padding: 0% 0% 0% 3%;
+}
+
+.view_class {
+	text-align: center;
+}
+
+/*#view_panel {
+	overflow-y: scroll;
+    //height: 100px;
+    resize: none;
+}*/
+
+.log {
+	text-align: center;
+	height:216px;
+	overflow-y:scroll;
+	width:100%;
+	background:white;
+	border-style: groove;
+}
+
+.table_wrapper {
+	text-align: center;
+}
+
+/*#file_log {
+	overflow-y: scroll;
+    //height: 100px;
+    resize: none;
+}*/
+
+table {
+	table-layout:fixed
+}
+
+td {
+	overflow:hidden; white-space:nowrap
+}
+
+.view_class {
+	text-align: center;
+	height:180px;
+	overflow-y:scroll;
+	width:100%;
+	border-style: groove;
+}
+
+#view_panel {
+	margin:auto;
+	background:white;
+}
+
+.ansc_panel {
+	text-align: center;
+	height:180px;
+	overflow-y:scroll;
+	width:100%;
+	border-style: groove;
+}
+
+#ansc {
+	margin:auto;
+	background:white;
+}
+
+.desc_panel {
+	text-align: center;
+	height:180px;
+	overflow-y:scroll;
+	width:100%;
+	border-style: groove;
+}
+
+#desc {
+	margin:auto;
+	background:white;
+}
+
+.log_class {
+	padding: 0% 3% 0% 3%;
+}
+
+.view_panel_class {
+	padding: 0% 3% 0% 3%;
+}
+
+p {
+	display:inline;
+	color:red;
+}
+
+.header3 {
+	text-align:center;
+}
+
+.Storage {
+	padding: 0% 3% 0% 3%;
+}
+
+/* The Modal (background) */
+.DBInfo {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.dbForm {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Genealogy App</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+	<!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <!-- Custom CSS End -->
+</head>
+    
+<body>
+	
+	<!-- The Modal -->
+	<div id="dbInfo" class="DBInfo">
+
+		<div class="dbForm">
+			<span class="close">&times;</span>
+			<h3>User Database Login</h3>
+			<p>*Note: This form will not be submitted until all fields are filled</p>
+			<form id="DBForm">
+				Username:<p>* </p><input type="text" name="username" id="username"><br>
+				Password:<p>* </p><input type="password" name="password" id="password"><br>
+				Database name:<p>* </p><input type="text" name="DBName" id="DBName"><br>
+				<input type="submit" value="Login" id="dbSubmit">
+			</form>
+		</div>
+
+	</div>
+	
+	<!--header1-->
+	<div class="H1">
+		<h1><center><b><font color="white">GENEALOGY APP</font></b></center></h1>
+	</div>
+	
+	<!--status panel-->
+	<label for="status_panel"><center><b>Status Panel</b></center></label>
+	<div class="status">
+		<textarea readonly rows="4" cols="100" id="status_panel">
+		 
+		</textarea>
+    </div>
+    
+    <!--Line break-->
+    <br><br><hr><br><br>
+    
+    <!--file upload-->
+    <div class="upload">
+		<br>
+		<label for="uploadFile" id="ged_label"><b>Upload a GEDCOM file</b></label>
+		<form action="/upload" enctype="multipart/form-data" id="upload_form" name="upload_form" method="POST">
+		  <input type="file" name="uploadFile" accept="file_extension" id="uploadFile"><br>
+		  <input type="submit" value="Upload" id="upload_file">
+		</form>
+		<br>
+	</div>
+	<br>
+	
+	<!--Create Gedcom-->
+	<div class="create">
+		<form id="create_form" action="/create" name="create_form" onsubmit="return validateCreate()" method="POST">
+			<br>
+			<label for="create_form"><b>Create a new GEDCOM file</b></label><br>
+			File name:<p>* </p><input type="text" name="filename" id="filename"><br>
+			File source: <input readonly type="text" name="source" id="source" value="Genealogy App"><br>
+			File encoding: <input readonly type="text" name="encoding" id="encoding" value="UTF-8"><br>
+			File GEDCOM version: <input readonly type="text" name="gedcVersion" id="gedcVersion" value="5.5"><br>
+			Submitter name:<p>* </p><input type="text" name="subName" id="subName"><br>
+			Submitter address: <input type="text" name="subAddress" id="subAddress"><br>
+			<input type="submit" value="Create File">
+		</form>
+		<br>
+	</div>
+	<br>
+    
+    
+    <!--Add Individual-->
+	<div class="add">
+		<form action="" id="add_indiv" name="add_indiv">
+			<br>
+			<label for="add_indiv"><b>Add an individual to an existing GEDCOM file</b></label><br><br>
+			<select name="file1" id="file1">
+				<option value="-----Select GEDCOM file-----">-----Select GEDCOM file-----</option>
+			</select>
+			<br><br>
+			
+			<label><b>Individual's information</b></label><br>
+			Given name: <input type="text" name="givenName" id="givenName"><br>
+			Last Name: <input type="text" name="lastname" id="lastname"><br>
+			Sex: <select name="sex" id="sex">
+				<option value="-----Choose sex-----">-----Choose sex-----</option>
+				<option value="M">M</option>
+				<option value="F">F</option>
+			</select>
+			<!--gotta find a way to allow entry of multiple events-->
+			
+			<br>
+			<input type="submit" value="Add Individual">
+		</form>
+		<br>
+	</div>
+	<br>
+	
+	<!--Get descendants-->
+	<div class="descendants">
+		<form action="" id="get_des" name="get_des">
+			<br>
+			<label for="get_des"><center><b>Get the descendants of an individual</b></center></label><br><br>
+			<select name="file2" id="file2" onchange="test()">
+				<option value="-----Select GEDCOM file-----">-----Select GEDCOM file-----</option>
+			</select>
+			<br>
+			<label><b>Select the individual from the drop-down list</b></label><br>
+			<select name="indiv" id="indiv">
+				<option value="-----Select individual-----">-----Select individual-----</option>
+			</select>
+			<br><br>
+			<input type="submit" value="Get Descendants">
+		</form>
+		<br>
+		<label><center><b>Descendants</b></center></label>
+		<div class="desc_panel">
+			<table readonly id="desc" border="1">
+				<tr>
+					<th>Generation</th>
+					<th>Individuals in generation</th>
+				</tr>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+	</div>
+	<br>
+	
+	<!--Get ascenstors-->
+	<div class="ancestors">
+		<form action="" id="get_ans" name="get_ans">
+			<br>
+			<label for="get_ans"><center><b>Get the ancestors of an individual</b></center></label><br>
+			<select name="file3" id="file3" onchange="test2()">
+				<option value="-----Select GEDCOM file-----">-----Select GEDCOM file-----</option>
+			</select>
+			<br>
+			<label><b>Select the individual from the drop-down list</b></label><br>
+			<select name="indiv2" id="indiv2">
+				<option value="-----Select individual-----">-----Select individual-----</option>
+			</select>
+			<br><br>
+			<input type="submit" value="Get Ancestors">
+		</form>
+		<br>
+		<label><center><b>Ancestors</b></center></label>
+		<div class="ansc_panel">
+			<table id="ansc" border="1">
+				<thead>
+				<tr>
+					<th>Generation</th>
+					<th>Individuals in generation</th>
+				</tr>
+				</thead>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+				<tr>
+					<td>Generation</td>
+					<td>Individuals in generation</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+	</div>
+	<br>
+    
+    <!--Line break-->
+    <br><hr><br>
+    
+    <!--View panel-->
+    <div class="view_panel_class">	
+	<div class="view_form">
+		<form action="" id="show_files" name="show_files">
+			<br>
+			<label for="show_files"><center><b>GEDCOM View Panel</b></center></label>
+			<select name="file4" id="file4">
+				<option value="-----Select GEDCOM file-----">-----Select GEDCOM file-----</option>
+			</select>
+			<br>
+			<input type="submit" value="Display file contents">
+		</form>
+		<br>
+    </div>
+    <div class="view_class">
+		<table readonly id="view_panel" border="1">
+			<tr>
+				<th>Given name</th>
+				<th>Surname</th>
+				<th>Sex</th>
+			</tr>
+			<tr>
+				<td>Given name</td>
+				<td>Surname</td>
+				<td>Sex</td>
+			</tr>
+			<tr>
+				<td>Given name</td>
+				<td>Surname</td>
+				<td>Sex</td>
+			</tr>
+			<tr>
+				<td>Given name</td>
+				<td>Surname</td>
+				<td>Sex</td>
+			</tr>
+			<tr>
+				<td>Given name</td>
+				<td>Surname</td>
+				<td>Sex</td>
+			</tr>
+			<tr>
+				<td>Given name</td>
+				<td>Surname</td>
+				<td>Sex</td>
+			</tr>
+		</table>
+	</div>
+    <br>
+    </div>
+    
+    <!--Line break-->
+    <br><hr><br><br>
+    
+    <!--File log panel-->
+    <div class="log_class">
+	<label for="file_log"><center><b>File Log</b></center></label>
+	<div class="table_wrapper">
+		<div class="log">
+			<table readonly id="file_log" border="1">
+				<tr>
+					<th>File Name (click to download)</th>
+					<th>Source</th>
+					<th>GEDC Version</th>
+					<th>Encoding</th>
+					<th>Submitter Name</th>
+					<th>Submitter Address</th>
+					<th>Number of Individuals</th>
+					<th>Number of Families</th>
+				</tr>
+			 
+			</table>
+		</div>
+	</div>
+	</div>
+    
+    <br><br><br>
+    
+    <!--A4 functionality starts here-->
+    <hr><br>
+    
+    <div class="header3">
+		<h3>DATABASE</h3>
+    </div>
+    
+    <div class="Storage">
+		<label for="storage"><b>Store data from all files on the database</b></label><br>
+		<button type="button" id="storage">Store All Files</button>
+    </div>
+    
+    
+    
+
+
+	<!-- Leave me at the bottom of body -->
+    <script src="./index.js"></script>
+</body>
+</html>

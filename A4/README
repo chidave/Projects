@@ -1,0 +1,21 @@
+***********************************************
+Author: Onyeije Chigozie Davis
+ID#: 0946343
+Project: CIS 2750 Assignment 3
+***********************************************
+
+How to run the program:
+-----------------------
+- From the root directory, run "npm install" in the terminal
+- cd to the "parser" folder and run "make" to compile the GEDCOMparser files
+- From the root directory, run "npm run dev portNum", where portNum is the port number
+- Open a browser and type "localhost:portNum" in the searchbar to run the program
+
+
+Limitations:
+------------
+- The program MAY crash when dealing with some files(especially shakespeare.ged). I was unable to fix this problem, but restarting
+  the server usually works
+- I used the body-parser module of the express package which was provided for us, and it seems to be 
+  depreceated in the version of Node that we are required to use, so there may be warnings when the 
+  server is started.
