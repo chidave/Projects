@@ -120,6 +120,11 @@ app.post('/store', (req, res) => {
 			returnVal = "Unable to connect";
 		}
 		else{
+			/*var clear = "DROP TABLE IF EXISTS INDIVIDUAL";
+			connection.query(clear);
+			var clear2 = "DROP TABLE IF EXISTS FILE";
+			connection.query(clear2);
+			
 			var file = "CREATE TABLE IF NOT EXISTS FILE(file_id INT NOT NULL AUTO_INCREMENT, file_Name VARCHAR(60) NOT NULL, source VARCHAR(250) NOT NULL, version VARCHAR(10) NOT NULL, encoding VARCHAR(10) NOT NULL, sub_name VARCHAR(62) NOT NULL, sub_addr VARCHAR(256) NOT NULL, num_individuals INT, num_families INT, PRIMARY KEY ( file_id ))";
 			connection.query(file, function(err, result) {
 				if(err) {
@@ -130,7 +135,7 @@ app.post('/store', (req, res) => {
 				else{
 					console.log("Sucessfully created FILE");
 					
-					var indivs = "CREATE TABLE IF NOT EXISTS INDIVIDUAL(ind_id INT NOT NULL AUTO_INCREMENT, surname VARCHAR(256) NOT NULL, given_name VARCHAR(256) NOT NULL, sex VARCHAR(1), fam_size INT, source_file INT, PRIMARY KEY ( ind_id ), FOREIGN KEY (source_file) REFERENCES FILE(file_id) ON DELETE CASCADE)";
+					var indivs = "CREATE TABLE IF NOT EXISTS INDIVIDUAL(ind_id INT NOT NULL AUTO_INCREMENT, surname VARCHAR(256) NOT NULL, given_name VARCHAR(256) NOT NULL, sex VARCHAR(1), source_file INT, PRIMARY KEY ( ind_id ), FOREIGN KEY (source_file) REFERENCES FILE(file_id) ON DELETE CASCADE)";
 					connection.query(indivs, function(err, result) {
 						if(err) {
 							console.log("Unable to create INDIVIDUAL");
@@ -140,7 +145,7 @@ app.post('/store', (req, res) => {
 						}
 					});
 				}
-			});
+			});*/
 			
 			//var individuals = 
 			
@@ -241,8 +246,6 @@ app.post('/addIndiv', (req, res) => {
 
 app.post('/storeFiles', (req, res) => {
 	
-	var inds = parseInt(req.body.numOfInd);
-	var fams = parseInt(req.body.numOfFam);
 	
 	var filename = "'"+req.body.filename+"'";
 	var source = "'"+req.body.source+"'";
@@ -254,16 +257,75 @@ app.post('/storeFiles', (req, res) => {
 	var famils = "'"+req.body.numOfFam+"'";
 	
 	var add = "INSERT INTO FILE (file_Name, source, version, encoding, sub_name, sub_addr, num_individuals, num_families) VALUES (" +filename+","+ source+","+ version+","+ encoding+","+ subName+","+ subAddress+"," +indivs+","+ famils +")";
-	console.log(add);
+	//console.log(add);
 	connection.query(add, function (err, result) {
 		if (err) {
 			console.log("ERROR WHILE INSERTING");
 		}else{
 			console.log("1 record inserted");
 		}
-  });
+	});
 	  
-	  res.end();
+	res.send(req.body.filename);
+	
+});
+
+app.post('/storeIndivs', (req, res) => {
+	
+	var fileID;
+	var getFile = "SELECT file_id FROM FILE WHERE file_name='"+req.body.filename+"'";
+	connection.query(getFile, function (err, result, fields) {
+		if (err) {
+			console.log("ERROR WHILE GETTING ID");
+		}else{
+			console.log("1 record gotten");
+			fileID = result[0].file_id;
+			
+			var add = "INSERT INTO INDIVIDUAL (surname, given_name, sex, source_file) VALUES ('"+req.body.surname+"','"+req.body.givenName+"','"+req.body.sex+"','"+fileID+"')";
+			connection.query(add, function (err, result) {
+				if (err) {
+					console.log("ERROR WHILE INSERTING");
+				}else{
+					console.log("1 individual record inserted");
+				}
+			});
+		}
+	});
+	  
+	res.end();
+	
+});
+
+app.get('/removeTabs', (req, res) => {
+	
+	var clear = "DROP TABLE IF EXISTS INDIVIDUAL";
+	connection.query(clear);
+	var clear2 = "DROP TABLE IF EXISTS FILE";
+	connection.query(clear2);
+	
+	var file = "CREATE TABLE IF NOT EXISTS FILE(file_id INT NOT NULL AUTO_INCREMENT, file_Name VARCHAR(60) NOT NULL, source VARCHAR(250) NOT NULL, version VARCHAR(10) NOT NULL, encoding VARCHAR(10) NOT NULL, sub_name VARCHAR(62) NOT NULL, sub_addr VARCHAR(256) NOT NULL, num_individuals INT, num_families INT, PRIMARY KEY ( file_id ))";
+	connection.query(file, function(err, result) {
+		if(err) {
+			console.log("Unable to create FILE");
+			//res.send("Unable to connect");
+			//returnVal = "Unable to connect";
+		}
+		else{
+			console.log("Sucessfully created FILE");
+			
+			var indivs = "CREATE TABLE IF NOT EXISTS INDIVIDUAL(ind_id INT NOT NULL AUTO_INCREMENT, surname VARCHAR(256) NOT NULL, given_name VARCHAR(256) NOT NULL, sex VARCHAR(1), source_file INT, PRIMARY KEY ( ind_id ), FOREIGN KEY (source_file) REFERENCES FILE(file_id) ON DELETE CASCADE)";
+			connection.query(indivs, function(err, result) {
+				if(err) {
+					console.log("Unable to create INDIVIDUAL");
+				}
+				else{
+					console.log("Successfully created INDIVIDUAL");
+				}
+			});
+		}
+	});
+	
+	res.end();
 	
 });
 

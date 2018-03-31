@@ -132,6 +132,7 @@ $(document).ready(function() {
 		}
 		if(file.length == 0) {
 			document.getElementById("storage").disabled = true; 
+			document.getElementById("clear").disabled = true;
 		}
 		for(var i = 0; i < file.length; i++) {
 			$.ajax({
@@ -678,10 +679,12 @@ $('#get_ans').submit(function(e){
 });
 
 $('#storage').click(function(){
+	clearTables();
 	
 	$.ajax({
 		type: 'GET', 
 		url: '/retrieve',
+		async: false,
 		success: function (data) {
 
 			getFileInfo(data);
@@ -694,6 +697,24 @@ $('#storage').click(function(){
 	});
 	
 });
+
+function clearTables() {
+	
+	$.ajax({
+		type: 'GET', 
+		url: '/removeTabs',
+		success: function (data) {
+
+			//console.log(data);
+			 
+		},
+		fail: function(error) {
+			
+			console.log(error); 
+		}
+	});
+	
+}
 
 	
 function getFileInfo(file) {
@@ -743,9 +764,10 @@ function populateTable(files) {
 			type: 'POST', 
 			url: '/storeFiles',
 			data: obj[i],
+			async: false,
 			success: function (data) {
-
-				getFileInfo(data);
+				
+				getIndiFromFile(data);
 				 
 			},
 			fail: function(error) {
@@ -757,4 +779,58 @@ function populateTable(files) {
 	
 }
 
+
+function getIndiFromFile(file) {
+	
+	$.ajax({
+		type: 'POST', 
+		url: '/viewTab',
+		data: { filename: file },
+		success: function (data) {
+			
+			if(data != "FAILED") {
+				//console.log(file);
+				populateTable2(data, file);
+			}
+			else{
+				//
+			}
+				 
+		},
+		fail: function(error) {
+			
+			console.log(error); 
+		}
+	});
+	
+}
+
+function populateTable2(individuals, file) {
+	
+	var indivs = JSON.parse(individuals);
+	
+	for(var i = 0; i < indivs.length; i++ ) {
+		
+		$.ajax({
+			type: 'POST', 
+			url: '/storeIndivs',
+			data: { filename: file , givenName: indivs[i].givenName , surname: indivs[i].surname , sex: indivs[i].sex },
+			async: false,
+			success: function (data) {
+				
+				//getIndiFromFile(data);
+				 
+			},
+			fail: function(error) {
+				
+				console.log(error); 
+			}
+		});
+		
+	}
+	
+}
+
+
+//make function that deletes tables only when store files is clicked
 
