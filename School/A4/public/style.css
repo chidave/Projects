@@ -213,6 +213,7 @@ p {
 
 .Storage {
 	padding: 0% 3% 0% 3%;
+	text-align:center;
 }
 
 /* The Modal (background) */
@@ -252,4 +253,9 @@ p {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+#console_panel {
+	width: 100%;
+	text-align: center;
 }

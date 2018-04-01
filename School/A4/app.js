@@ -330,6 +330,96 @@ app.get('/removeTabs', (req, res) => {
 });
 
 
+app.get('/clearTables', (req, res) => {
+	
+	var file = "DELETE FROM INDIVIDUAL";
+	connection.query(file, function(err, result) {
+		if(err) {
+			console.log("Unable to delete from INDIVIDUAL");
+			
+		}
+		else{
+			console.log("Sucessfully deleted from INDIVIDUAL");
+			
+			var clear = "DELETE FROM FILE";
+			connection.query(clear, function(err, result) {
+				if(err) {
+					console.log("Unable to delete from FILE");
+					
+				}
+				else{
+					console.log("Sucessfully deleted from FILE");
+					
+					
+				}
+			});
+		}
+	});
+	
+	res.end();
+	
+});
+
+app.get('/dispStat', (req, res) => {
+	
+	var fileNum;
+	var indiNum;
+	
+	var file = "SELECT COUNT(*) AS total FROM INDIVIDUAL";
+	connection.query(file, function(err, result) {
+		if(err) {
+			console.log("Unable to count INDIVIDUAL");
+			
+		}
+		else{
+			indiNum = result[0].total;
+			console.log("HERE");
+			
+			var clear = "SELECT COUNT(*) AS total FROM FILE";
+			connection.query(clear, function(err, result) {
+				if(err) {
+					console.log("Unable to count FILE");
+					
+				}
+				else{
+					fileNum = result[0].total;
+					var returnVal = "{\"fileNum\":\""+fileNum+"\",\"indiNum\":\""+indiNum+"\"}";
+					res.send(returnVal);
+					
+				}
+				
+			});
+		}
+		
+	});
+	
+	
+	//res.end();
+	
+});
+
+app.get('/nameSort', (req, res) => {
+	
+	var getAll = "SELECT * FROM INDIVIDUAL ORDER BY surname";
+	
+	connection.query(getAll, function(err, result) {
+		if(err) {
+			console.log("Unable to get INDIVIDUAL");
+			
+		}
+		else{
+			//indiNum = result[0].total;
+			console.log(result[0]);
+		}
+	});
+	
+	res.end();
+	
+});
+
+
+//remember to remove table drop
+
 
 app.listen(portNum);
 console.log('Running app at localhost: ' + portNum);

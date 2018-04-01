@@ -5,6 +5,7 @@ $(document).ready(function() {
 	function clearStat() {
 		
 		document.getElementById('status_panel').value = "";
+		document.getElementById('console_panel').value = "";
 		
 	}
 	clearStat();
@@ -688,6 +689,7 @@ $('#storage').click(function(){
 		success: function (data) {
 
 			getFileInfo(data);
+			displayDB();
 			 
 		},
 		fail: function(error) {
@@ -695,6 +697,7 @@ $('#storage').click(function(){
 			console.log(error); 
 		}
 	});
+	document.getElementById("clear").disabled = false;
 	
 });
 
@@ -828,6 +831,95 @@ function populateTable2(individuals, file) {
 		});
 		
 	}
+	
+}
+
+$('#clear').click(function(){
+	
+	$.ajax({
+		type: 'GET', 
+		url: '/clearTables',
+		async: false,
+		success: function (data) {
+			
+			displayDB();
+				 
+		},
+		fail: function(error) {
+			
+			console.log(error); 
+		}
+	});
+	document.getElementById("clear").disabled = true;
+	
+});
+
+$('#disp').click(function(){
+	
+	$.ajax({
+		type: 'GET', 
+		url: '/dispStat',
+		success: function (data) {
+			
+			var obj = JSON.parse(data);
+			var panel = "Database has "+obj.fileNum+" files and "+obj.indiNum+" individuals";
+			document.getElementById('console_panel').value = panel;
+				 
+		},
+		fail: function(error) {
+			
+			console.log(error); 
+		}
+	});
+	
+});
+
+function displayDB() {
+	
+	$.ajax({
+		type: 'GET', 
+		url: '/dispStat',
+		success: function (data) {
+			
+			var obj = JSON.parse(data);
+			var panel = "Database has "+obj.fileNum+" files and "+obj.indiNum+" individuals";
+			document.getElementById('console_panel').value = panel;
+				 
+		},
+		fail: function(error) {
+			
+			console.log(error); 
+		}
+	});
+	
+}
+
+$('#subQuery').click(function(){
+	
+	if(document.querySelector('input[name="query"]:checked').value == "1") {
+		
+		nameSort();
+		
+	}
+	
+});
+
+function nameSort() {
+	
+	$.ajax({
+		type: 'GET', 
+		url: '/nameSort',
+		async: false,
+		success: function (data) {
+			
+			
+				 
+		},
+		fail: function(error) {
+			
+			console.log(error); 
+		}
+	});
 	
 }
 

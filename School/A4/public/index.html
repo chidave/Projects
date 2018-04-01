@@ -300,11 +300,24 @@
     </div>
     
     <div class="Storage">
-		<label for="storage"><b>Store data from all files on the database</b></label><br>
-		<button type="button" id="storage">Store All Files</button><br>
+		<label for="console_panel"><b>Database Console Panel</b></label><br>
+		<textarea readonly rows="4" id="console_panel">
+		 
+		</textarea><br>
 		
-		<label for="clear"><b>Clear database data on all files</b></label><br>
+		<!--<label for="storage"><b>Store data from all files on the database</b></label><br>-->
+		<button type="button" id="storage">Store All Files</button>
+		
+		<!--<label for="clear"><b>Clear database data on all files</b></label><br>-->
 		<button type="button" id="clear">Clear All Data</button>
+		
+		<!--<label for="disp"><b>Display database status</b></label><br>-->
+		<button type="button" id="disp">Display DB Status</button><br><br>
+		
+		<label><b>Execute Database Queries</b></label><br>
+		<input type="radio" id="q1" name="query" value="1">Display all individuals sorted by last name<br>
+		<input type="radio" id="q2" name="query" value="2">#Query 2<br>
+		<button type="button" id="subQuery">Execute Query</button><br>
     </div>
     
     
