@@ -1,0 +1,323 @@
+@startuml
+
+title __APP's Class Diagram__\n
+
+  package org.jamienicol.episodes {
+    class AboutActivity {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowPreviewActivity {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowPreviewFragment {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowSearchActivity {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowSearchFragment {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowSearchResults {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.services {
+      class AddShowService {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AutoRefreshHelper {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.db {
+      class BackUpRestoreHelper {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class BuildConfig {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.tvdb {
+      class Client {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.db {
+      class DatabaseOpenHelper {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.tvdb {
+      class Episode {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodeActivity {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodeDetailsFragment {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodesApplication {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodesCounter {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodesListFragment {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.db {
+      class EpisodesTable {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.tvdb {
+      class GetShowParser {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class MainActivity {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class NextEpisodeFragment {
+    }
+  }
+  
+
+  package android.support.v7.recyclerview {
+    class R {
+    }
+  }
+  
+
+  package android.support.v7.appcompat {
+    class R {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class R {
+    }
+  }
+  
+
+  package android.support.design {
+    class R {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.services {
+      class RefreshShowService {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class RefreshShowUtil {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.tvdb {
+      class SearchShowsParser {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SeasonActivity {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SeasonsListFragment {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SelectBackupDialog {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SettingsActivity {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SettingsFragment {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.tvdb {
+      class Show {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ShowActivity {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ShowDetailsFragment {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ShowNotesFragment {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ShowsListFragment {
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.db {
+      class ShowsProvider {
+      }
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    package org.jamienicol.episodes.db {
+      class ShowsTable {
+      }
+    }
+  }
+  
+
+  AddShowPreviewFragment o-- Show : show
+  AddShowSearchFragment -up-|> LoaderCallbacks
+  AddShowService -up-|> IntentService
+  AutoRefreshHelper -up-|> OnSharedPreferenceChangeListener
+  DatabaseOpenHelper -up-|> SQLiteOpenHelper
+  EpisodeActivity -up-|> LoaderCallbacks
+  EpisodeActivity o-- EpisodeDetailsPagerAdapter : pagerAdapter
+  EpisodeDetailsFragment -up-|> LoaderCallbacks
+  EpisodesApplication -up-|> Application
+  EpisodesApplication o-- AutoRefreshHelper : autoRefreshHelper
+  EpisodesListFragment -up-|> LoaderCallbacks
+  EpisodesListFragment o-- EpisodesCursorAdapter : listAdapter
+  EpisodesListFragment o-- OnEpisodeSelectedListener : onEpisodeSelectedListener
+  GetShowParser o-- Show : show
+  GetShowParser o-- Episode : episode
+  MainActivity -up-|> OnShowSelectedListener
+  MainActivity -up-|> OnBackupSelectedListener
+  NextEpisodeFragment -up-|> LoaderCallbacks
+  RefreshShowService -up-|> IntentService
+  SearchShowsParser o-- Show : current
+  SeasonActivity -up-|> LoaderCallbacks
+  SeasonActivity -up-|> OnEpisodeSelectedListener
+  SeasonsListFragment -up-|> LoaderCallbacks
+  SeasonsListFragment o-- SeasonsListAdapter : listAdapter
+  SeasonsListFragment o-- OnSeasonSelectedListener : onSeasonSelectedListener
+  SeasonsListFragment o-- OnItemClickListener : onItemClickListener
+  SelectBackupDialog o-- OnBackupSelectedListener : onBackupSelectedListener
+  SettingsFragment -up-|> PreferenceFragment
+  ShowActivity -up-|> LoaderCallbacks
+  ShowActivity -up-|> OnPageChangeListener
+  ShowActivity -up-|> OnSeasonSelectedListener
+  ShowActivity o-- PagerAdapter : pagerAdapter
+  ShowDetailsFragment -up-|> LoaderCallbacks
+  ShowNotesFragment -up-|> LoaderCallbacks
+  ShowsListFragment -up-|> LoaderCallbacks
+  ShowsListFragment o-- ShowsListAdapter : listAdapter
+  ShowsListFragment o-- OnShowSelectedListener : onShowSelectedListener
+  ShowsProvider -up-|> ContentProvider
+  ShowsProvider o-- DatabaseOpenHelper : databaseOpenHelper
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,47 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Chigozie Davis\\Desktop\\Soft_Eng_Git\\w19-section-2-group-2-project\\app\\build\\intermediates\\incremental\\mergeFdroidDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Chigozie Davis\\Desktop\\Soft_Eng_Git\\w19-section-2-group-2-project\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "from": {
+                        "startLines": "2,10",
+                        "startColumns": "2,2",
+                        "startOffsets": "55,454",
+                        "endLines": "8,14",
+                        "endColumns": "10,10",
+                        "endOffsets": "448,677"
+                    },
+                    "to": {
+                        "startLines": "7,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "331,723",
+                        "endLines": "13,18",
+                        "endColumns": "10,10",
+                        "endOffsets": "718,942"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Chigozie Davis\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.0.aar\\bbe326ae989294e80ae555e11bd9b71c\\res\\values-v14\\values-v14.xml",
+                    "from": {
+                        "startLines": "4,11,12,13,19,27,28,29,32,33",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "301,818,889,972,1382,2040,2160,2223,2377,2440",
+                        "endLines": "8,11,12,18,24,27,28,31,32,33",
+                        "endColumns": "12,70,82,12,12,119,62,12,62,131",
+                        "endOffsets": "572,884,967,1377,1799,2155,2218,2372,2435,2567"
+                    },
+                    "to": {
+                        "startLines": "2,19,20,21,27,33,34,35,38,39",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,947,1018,1101,1511,1933,2053,2116,2270,2333",
+                        "endLines": "6,19,20,26,32,33,34,37,38,39",
+                        "endColumns": "12,70,82,12,12,119,62,12,62,131",
+                        "endOffsets": "326,1013,1096,1506,1928,2048,2111,2265,2328,2460"
+                    }
+                }
+            ]
+        }
+    ]
+}

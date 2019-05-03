@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:episodes="http://schemas.android.com/apk/res-auto">
+
+  <item
+      android:icon="@drawable/ic_menu_filter_shows_list"
+      android:title="@string/menu_filter_shows_list"
+      android:id="@+id/menu_filter_list"
+      episodes:showAsAction="always">
+    <!--episodes:showAsAction="ifRoom|withText|collapseActionView">-->
+    <menu>
+      <group
+          android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_filter_all"
+            android:title="@string/menu_filter_all"/>
+        <item
+            android:id="@+id/menu_filter_starred"
+            android:title="@string/menu_filter_starred"/>
+        <item
+            android:id="@+id/menu_filter_uncompleted"
+            android:title="@string/menu_filter_uncompleted"/>
+        <item
+            android:id="@+id/menu_filter_genre"
+            android:title="Genre">
+          <menu>
+            <item
+                android:id="@+id/menu_filter_genre_action"
+                android:title="@string/menu_filter_genre_action"/>
+            <item
+                android:id="@+id/menu_filter_genre_adventure"
+                android:title="@string/menu_filter_genre_adventure"/>
+            <item
+                android:id="@+id/menu_filter_genre_animation"
+                android:title="@string/menu_filter_genre_animation"/>
+            <item
+                android:id="@+id/menu_filter_genre_comedy"
+                android:title="@string/menu_filter_genre_comedy"/>
+            <item
+                android:id="@+id/menu_filter_genre_crime"
+                android:title="@string/menu_filter_genre_crime"/>
+            <item
+                android:id="@+id/menu_filter_genre_drama"
+                android:title="@string/menu_filter_genre_drama"/>
+            <item
+                android:id="@+id/menu_filter_genre_family"
+                android:title="@string/menu_filter_genre_family"/>
+            <item
+                android:id="@+id/menu_filter_genre_fantasy"
+                android:title="@string/menu_filter_genre_fantasy"/>
+            <item
+                android:id="@+id/menu_filter_genre_horror"
+                android:title="@string/menu_filter_genre_horror"/>
+            <item
+                android:id="@+id/menu_filter_genre_mystery"
+                android:title="@string/menu_filter_genre_mystery"/>
+            <item
+                android:id="@+id/menu_filter_genre_romance"
+                android:title="@string/menu_filter_genre_romance"/>
+            <item
+                android:id="@+id/menu_filter_genre_scifi"
+                android:title="@string/menu_filter_genre_scifi"/>
+            <item
+                android:id="@+id/menu_filter_genre_suspense"
+                android:title="@string/menu_filter_genre_suspense"/>
+            <item
+                android:id="@+id/menu_filter_genre_thriller"
+                android:title="@string/menu_filter_genre_thriller"/>
+          </menu>
+        </item>
+        <item
+            android:id="@+id/menu_filter_airing"
+            android:title="@string/menu_filter_airing"/>
+
+
+
+      </group>
+      <!-- Possibly add another group for filtering by genres? -->
+    </menu>
+  </item>
+  <item
+      android:icon="@drawable/ic_menu_sort_list"
+      android:id="@+id/menu_sort_list"
+      android:title="@string/ic_menu_sort_list"
+      episodes:showAsAction="always">
+    <menu>
+
+      <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_sort_alpha_ascending"
+            android:title="@string/menu_sort_alpha_ascending"/>
+        <item
+            android:id="@+id/menu_sort_alpha_descending"
+            android:title="@string/menu_sort_alpha_descending"/>
+        <item
+            android:id="@+id/menu_sort_rating_ascending"
+            android:title="@string/menu_sort_rating_ascending"/>
+        <item
+            android:id="@+id/menu_sort_rating_descending"
+            android:title="@string/menu_sort_rating_descending"/>
+        <item
+            android:id="@+id/menu_sort_runtime_ascending"
+            android:title="@string/menu_sort_runtime_ascending"/>
+        <item
+            android:id="@+id/menu_sort_runtime_descending"
+            android:title="@string/menu_sort_runtime_descending"/>
+        <item
+            android:id="@+id/menu_sort_watched_ascending"
+            android:title="@string/menu_sort_watched_ascending"/>
+        <item
+            android:id="@+id/menu_sort_watched_descending"
+            android:title="@string/menu_sort_watched_descending"/>
+      </group>
+    </menu>
+  </item>
+
+  <item
+      android:id="@+id/menu_refresh_all_shows"
+      android:title="@string/menu_refresh_all_shows"
+      episodes:showAsAction="never" />
+</menu>
+

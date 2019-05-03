@@ -1,0 +1,9 @@
+build/
+.gradle/
+.idea/
+./app/build.gradle
+./app/build
+./app/.idea
+local.properties
+episodes-master.iml
+

@@ -1,0 +1,1 @@
+[{"outputType":{"type":"INSTANT_APP_MANIFEST"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":12,"versionName":"0.12-DEBUG","enabled":true,"outputFile":"app-fdroid-debug.apk","fullName":"fdroidDebug","baseName":"fdroid-debug"},"path":"AndroidManifest.xml","properties":{"packageId":"org.jamienicol.episodes.debug","split":"","minSdkVersion":"11"}}]

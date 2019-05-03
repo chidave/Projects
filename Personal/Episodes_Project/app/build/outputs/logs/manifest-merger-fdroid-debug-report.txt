@@ -1,0 +1,204 @@
+-- Merging decision tree log ---
+provider#org.jamienicol.episodes.db.ShowsProvider
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:103:5-107:16
+	android:authorities
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:105:9-64
+	android:exported
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:106:9-33
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:104:9-41
+manifest
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:2:1-110:12
+MERGED from [com.android.support:design:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\design-22.2.0.aar\4e4e9a74fab16b559fcca1d8bb766906\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.0.aar\bbe326ae989294e80ae555e11bd9b71c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:recyclerview-v7:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-22.2.0.aar\44d1aacd1dcd7209561d3f52c9a0f797\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.0.aar\ed678c293cc7ef39473cf1f4f671d509\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:2:1-110:12
+	package
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:4:5-38
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:2:1-110:12
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:2:1-110:12
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:3:5-63
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:6:3-7:63
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:7:7-61
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:8:3-9:51
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:9:7-49
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:10:3-11:64
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:11:7-62
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:12:3-13:65
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:13:7-63
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:14:3-15:65
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:15:7-63
+application
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:17:3-109:17
+MERGED from [com.android.support:design:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\design-22.2.0.aar\4e4e9a74fab16b559fcca1d8bb766906\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\design-22.2.0.aar\4e4e9a74fab16b559fcca1d8bb766906\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.0.aar\bbe326ae989294e80ae555e11bd9b71c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.0.aar\bbe326ae989294e80ae555e11bd9b71c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.0.aar\ed678c293cc7ef39473cf1f4f671d509\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.0.aar\ed678c293cc7ef39473cf1f4f671d509\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:19:7-39
+	android:icon
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:20:7-41
+	android:allowBackup
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:22:7-33
+	android:theme
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:21:7-44
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:18:7-42
+activity#org.jamienicol.episodes.MainActivity
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:24:5-32:16
+	android:label
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:26:9-41
+	android:launchMode
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:27:9-39
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:25:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:28:7-31:23
+action#android.intent.action.MAIN
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:29:9-61
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:29:17-58
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:30:9-69
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:30:19-66
+activity#org.jamienicol.episodes.SettingsActivity
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:34:5-41:16
+	android:parentActivityName
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:37:9-51
+	android:label
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:36:9-47
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:35:9-41
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:38:7-40:42
+	android:value
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:40:11-40
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:39:11-57
+activity#org.jamienicol.episodes.AboutActivity
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:43:5-46:16
+	android:label
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:45:9-44
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:44:9-38
+activity#org.jamienicol.episodes.AddShowSearchActivity
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:48:5-51:16
+	android:label
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:50:9-25
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:49:9-46
+activity#org.jamienicol.episodes.AddShowPreviewActivity
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:53:5-56:16
+	android:label
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:55:9-25
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:54:9-47
+activity#org.jamienicol.episodes.ShowActivity
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:58:5-62:16
+	android:label
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:60:9-25
+	android:theme
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:61:9-58
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:59:9-37
+activity#org.jamienicol.episodes.SeasonActivity
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:64:5-67:16
+	android:label
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:66:9-25
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:65:9-39
+activity#org.jamienicol.episodes.EpisodeActivity
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:69:5-72:16
+	android:label
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:71:9-25
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:70:9-40
+service#org.jamienicol.episodes.services.AddShowService
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:74:5-76:15
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:75:9-48
+service#org.jamienicol.episodes.services.RefreshShowService
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:78:5-80:15
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:79:9-52
+service#org.jamienicol.episodes.AutoRefreshHelper$Service
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:82:5-84:15
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:83:9-50
+receiver#org.jamienicol.episodes.AutoRefreshHelper$BootReceiver
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:86:5-92:16
+	android:exported
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:88:9-32
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:87:9-55
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:89:7-91:23
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:90:9-71
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:90:17-68
+receiver#org.jamienicol.episodes.AutoRefreshHelper$NetworkStateReceiver
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:94:5-101:16
+	android:enabled
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:97:9-32
+	android:exported
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:96:9-32
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:95:9-63
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:98:7-100:23
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:99:9-70
+	android:name
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml:99:17-68
+uses-sdk
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\design-22.2.0.aar\4e4e9a74fab16b559fcca1d8bb766906\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\design-22.2.0.aar\4e4e9a74fab16b559fcca1d8bb766906\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.0.aar\bbe326ae989294e80ae555e11bd9b71c\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.0.aar\bbe326ae989294e80ae555e11bd9b71c\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-22.2.0.aar\44d1aacd1dcd7209561d3f52c9a0f797\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-22.2.0.aar\44d1aacd1dcd7209561d3f52c9a0f797\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.0.aar\ed678c293cc7ef39473cf1f4f671d509\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Chigozie Davis\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.0.aar\ed678c293cc7ef39473cf1f4f671d509\AndroidManifest.xml:20:5-43
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Chigozie Davis\Desktop\Soft_Eng_Git\w19-section-2-group-2-project\app\src\main\AndroidManifest.xml

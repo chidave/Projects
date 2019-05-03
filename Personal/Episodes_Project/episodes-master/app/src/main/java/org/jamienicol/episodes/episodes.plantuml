@@ -1,0 +1,606 @@
+@startuml
+
+title __EPISODES's Class Diagram__\n
+
+  package org.jamienicol.episodes {
+    class AboutActivity {
+        + onCreate()
+        + onOptionsItemSelected()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowPreviewActivity {
+        + onCreate()
+        + onOptionsItemSelected()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowPreviewFragment {
+        {static} + newInstance()
+        + onCreate()
+        + onCreateView()
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        - addShow()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowSearchActivity {
+        + onCreate()
+        + onOptionsItemSelected()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowSearchFragment {
+        {static} + newInstance()
+        + onCreateView()
+        + onActivityCreated()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+        + onListItemClick()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SearchLoader {
+        - query : String
+        - cachedResult : List<Show>
+        + SearchLoader()
+        + loadInBackground()
+        + deliverResult()
+        + onStartLoading()
+        + onStopLoading()
+        + onReset()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SearchResultsAdapter {
+        - inflater : LayoutInflater
+        + SearchResultsAdapter()
+        + getView()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AddShowSearchResults {
+        {static} - instance : AddShowSearchResults
+        - data : List<Show>
+        - AddShowSearchResults()
+        {static} + getInstance()
+        + getData()
+        + setData()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class AutoRefreshHelper {
+        {static} - TAG : String
+        {static} - KEY_PREF_AUTO_REFRESH_ENABLED : String
+        {static} - KEY_PREF_AUTO_REFRESH_PERIOD : String
+        {static} - KEY_PREF_AUTO_REFRESH_WIFI_ONLY : String
+        {static} - KEY_LAST_AUTO_REFRESH_TIME : String
+        {static} - instance : AutoRefreshHelper
+        - context : Context
+        - preferences : SharedPreferences
+        + AutoRefreshHelper()
+        {static} + getInstance()
+        + onSharedPreferenceChanged()
+        - onAutoRefreshEnabledChanged()
+        - onAutoRefreshPeriodChanged()
+        - onAutoRefreshWifiOnlyChanged()
+        - getAutoRefreshEnabled()
+        - getAutoRefreshPeriod()
+        - getAutoRefreshWifiOnly()
+        - getPrevAutoRefreshTime()
+        - setPrevAutoRefreshTime()
+        - checkNetwork()
+        + rescheduleAlarm()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class Service {
+        {static} - TAG : String
+        + Service()
+        # onHandleIntent()
+        {static} - getShowsCursor()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class BootReceiver {
+        {static} - TAG : String
+        + onReceive()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class NetworkStateReceiver {
+        {static} - TAG : String
+        + onReceive()
+        {static} + enable()
+        {static} + disable()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodeActivity {
+        ~ initialEpisodeId : int
+        - episodeDetailsPager : ViewPager
+        - episodesData : Cursor
+        + onCreate()
+        + onCreateLoader()
+        - getEpisodePositionFromId()
+        + onLoadFinished()
+        + onLoaderReset()
+        + onOptionsItemSelected()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodeDetailsPagerAdapter {
+        ~ episodesData : Cursor
+        + EpisodeDetailsPagerAdapter()
+        + swapCursor()
+        + getCount()
+        + getItem()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodeDetailsFragment {
+        - episodeId : int
+        - rootView : View
+        - titleView : TextView
+        - overviewView : TextView
+        - dateView : TextView
+        - watched : boolean
+        - watchedCheckBox : CheckBox
+        {static} + newInstance()
+        + onCreate()
+        + onCreateView()
+        + onActivityCreated()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodesApplication {
+        {static} - TAG : String
+        {static} - instance : EpisodesApplication
+        - httpClient : OkHttpClient
+        + onCreate()
+        {static} + getInstance()
+        + getHttpClient()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodesCounter {
+        - keyColumn : String
+        - keys : Set<Integer>
+        - numAiredEpisodesMap : SparseIntArray
+        - numWatchedEpisodesMap : SparseIntArray
+        - numUpcomingEpisodesMap : SparseIntArray
+        + EpisodesCounter()
+        + swapCursor()
+        + getKeys()
+        + getNumAiredEpisodes()
+        + getNumWatchedEpisodes()
+        + getNumUpcomingEpisodes()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodesListFragment {
+        - showId : int
+        - seasonNumber : int
+        {static} + newInstance()
+        + onAttach()
+        + onCreateView()
+        + onActivityCreated()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+        + onListItemClick()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    interface OnEpisodeSelectedListener {
+        {abstract} + onEpisodeSelected()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class EpisodesCursorAdapter {
+        + EpisodesCursorAdapter()
+        + bindView()
+        + newView()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class MainActivity {
+        + onCreate()
+        + onCreateOptionsMenu()
+        + onOptionsItemSelected()
+        + onShowSelected()
+        - back_up()
+        - restore()
+        + onBackupSelected()
+        - showSettings()
+        - showAbout()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class NextEpisodeFragment {
+        {static} - TAG : String
+        - showId : int
+        - episodeId : int
+        - rootView : View
+        - titleView : TextView
+        - overviewView : TextView
+        - dateView : TextView
+        - watched : boolean
+        - watchedCheckBox : CheckBox
+        {static} + newInstance()
+        + onCreate()
+        + onCreateView()
+        + onActivityCreated()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class RefreshShowUtil {
+        {static} - TAG : String
+        {static} + refreshShow()
+        {static} - getRefreshRequestData()
+        {static} - updateShow()
+        {static} - updateExistingEpisodes()
+        {static} - getEpisodesCursor()
+        {static} - findEpisodeWithTvdbId()
+        {static} - addNewEpisodes()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class RefreshRequestData {
+        + tvdbId : int
+        + language : String
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SeasonActivity {
+        - showId : int
+        - seasonNumber : int
+        + onCreate()
+        + onCreateOptionsMenu()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+        + onOptionsItemSelected()
+        + onEpisodeSelected()
+        - markSeasonWatched()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SeasonsListFragment {
+        - showId : int
+        - listView : RecyclerView
+        {static} + newInstance()
+        + onAttach()
+        + onCreateView()
+        + onActivityCreated()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    interface OnSeasonSelectedListener {
+        {abstract} + onSeasonSelected()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ViewHolder {
+        - itemContainer : View
+        - nameView : TextView
+        - progressBar : ProgressBar
+        - watchedCountView : TextView
+        + ViewHolder()
+        + getItemContainer()
+        + getNameView()
+        + getProgressBar()
+        + getWatchedCountView()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SeasonsListAdapter {
+        - context : Context
+        + SeasonsListAdapter()
+        + swapEpisodesCursor()
+        + onCreateViewHolder()
+        + onBindViewHolder()
+        + getItemCount()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    interface OnItemClickListener {
+        {abstract} + onItemClick()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SelectBackupDialog {
+        + onAttach()
+        + onCreateDialog()
+        - getBackupFiles()
+        - createDialogBackups()
+        - createDialogNoBackups()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    interface OnBackupSelectedListener {
+        {abstract} + onBackupSelected()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SettingsActivity {
+        + onCreate()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class SettingsFragment {
+        + onCreate()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ShowActivity {
+        {static} - KEY_DEFAULT_TAB : String
+        - showId : int
+        - isShowStarred : boolean
+        - headerImage : ImageView
+        - toolbar : Toolbar
+        - titleView : TextView
+        - tabStrip : TabLayout
+        - pager : ViewPager
+        + onCreate()
+        + onCreateOptionsMenu()
+        + onPrepareOptionsMenu()
+        + onOptionsItemSelected()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+        + onPageScrolled()
+        + onPageSelected()
+        + onPageScrollStateChanged()
+        + onSeasonSelected()
+        - toggleShowStarred()
+        - refreshShow()
+        - markShowWatched()
+        - deleteShow()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class PagerAdapter {
+        - context : Context
+        - showId : int
+        + PagerAdapter()
+        + getCount()
+        + getPageTitle()
+        + getItem()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ShowDetailsFragment {
+        - showId : int
+        - overviewView : TextView
+        - firstAiredView : TextView
+        {static} + newInstance()
+        + onCreate()
+        + onCreateView()
+        + onActivityCreated()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ShowNotesFragment {
+        - showId : int
+        - notesView : TextView
+        {static} + newInstance()
+        + onCreate()
+        + onCreateView()
+        + onActivityCreated()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ShowsListFragment {
+        {static} - LOADER_ID_SHOWS : int
+        {static} - LOADER_ID_EPISODES : int
+        {static} - KEY_PREF_SHOWS_FILTER : String
+        {static} - SHOWS_FILTER_ALL : int
+        {static} - SHOWS_FILTER_STARRED : int
+        {static} - SHOWS_FILTER_UNCOMPLETED : int
+        - showsData : Cursor
+        - episodesData : Cursor
+        + onAttach()
+        + onCreate()
+        + onCreateView()
+        + onActivityCreated()
+        + onCreateOptionsMenu()
+        + onPrepareOptionsMenu()
+        + onOptionsItemSelected()
+        + onCreateLoader()
+        + onLoadFinished()
+        + onLoaderReset()
+        + onListItemClick()
+        - refreshAllShows()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    interface OnShowSelectedListener {
+        {abstract} + onShowSelected()
+    }
+  }
+  
+
+  package org.jamienicol.episodes {
+    class ShowsListAdapter {
+        - context : Context
+        - showsCursor : Cursor
+        - filter : int
+        - filteredShows : List<Integer>
+        + ShowsListAdapter()
+        + swapShowsCursor()
+        + swapEpisodesCursor()
+        + onSharedPreferenceChanged()
+        - updateFilter()
+        + getCount()
+        + getItem()
+        + getItemId()
+        + getView()
+    }
+  }
+  
+
+  AddShowPreviewFragment o-- Show : show
+  AddShowSearchFragment -up-|> LoaderCallbacks
+  AddShowSearchFragment +-down- SearchLoader
+  AddShowSearchFragment +-down- SearchResultsAdapter
+  SearchResultsAdapter -up-|> ArrayAdapter
+  AutoRefreshHelper -up-|> OnSharedPreferenceChangeListener
+  AutoRefreshHelper +-down- Service
+  AutoRefreshHelper +-down- BootReceiver
+  AutoRefreshHelper +-down- NetworkStateReceiver
+  Service -up-|> IntentService
+  BootReceiver -up-|> BroadcastReceiver
+  NetworkStateReceiver -up-|> BroadcastReceiver
+  EpisodeActivity -up-|> LoaderCallbacks
+  EpisodeActivity o-- EpisodeDetailsPagerAdapter : pagerAdapter
+  EpisodeActivity +-down- EpisodeDetailsPagerAdapter
+  EpisodeDetailsFragment -up-|> LoaderCallbacks
+  EpisodesApplication -up-|> Application
+  EpisodesApplication o-- AutoRefreshHelper : autoRefreshHelper
+  EpisodesListFragment -up-|> LoaderCallbacks
+  EpisodesListFragment o-- EpisodesCursorAdapter : listAdapter
+  EpisodesListFragment o-- OnEpisodeSelectedListener : onEpisodeSelectedListener
+  EpisodesListFragment +-down- OnEpisodeSelectedListener
+  EpisodesListFragment +-down- EpisodesCursorAdapter
+  MainActivity -up-|> OnShowSelectedListener
+  MainActivity -up-|> OnBackupSelectedListener
+  NextEpisodeFragment -up-|> LoaderCallbacks
+  RefreshShowUtil +-down- RefreshRequestData
+  SeasonActivity -up-|> LoaderCallbacks
+  SeasonActivity -up-|> OnEpisodeSelectedListener
+  SeasonsListFragment -up-|> LoaderCallbacks
+  SeasonsListFragment o-- SeasonsListAdapter : listAdapter
+  SeasonsListFragment o-- OnSeasonSelectedListener : onSeasonSelectedListener
+  SeasonsListFragment o-- OnItemClickListener : onItemClickListener
+  SeasonsListFragment +-down- OnSeasonSelectedListener
+  SeasonsListFragment +-down- ViewHolder
+  SeasonsListFragment +-down- SeasonsListAdapter
+  SeasonsListAdapter o-- OnItemClickListener : onItemClickListener
+  SeasonsListAdapter o-- EpisodesCounter : episodesCounter
+  SeasonsListAdapter +-down- OnItemClickListener
+  SelectBackupDialog o-- OnBackupSelectedListener : onBackupSelectedListener
+  SelectBackupDialog +-down- OnBackupSelectedListener
+  SettingsFragment -up-|> PreferenceFragment
+  InstantiationException -up-|> AndroidRuntimeException
+  SavedState -up-|> Parcelable
+  ShowActivity -up-|> LoaderCallbacks
+  ShowActivity -up-|> OnPageChangeListener
+  ShowActivity -up-|> OnSeasonSelectedListener
+  ShowActivity o-- PagerAdapter : pagerAdapter
+  ShowActivity +-down- PagerAdapter
+  ShowDetailsFragment -up-|> LoaderCallbacks
+  ShowNotesFragment -up-|> LoaderCallbacks
+  ShowsListFragment -up-|> LoaderCallbacks
+  ShowsListFragment o-- ShowsListAdapter : listAdapter
+  ShowsListFragment o-- OnShowSelectedListener : onShowSelectedListener
+  ShowsListFragment +-down- OnShowSelectedListener
+  ShowsListFragment +-down- ShowsListAdapter
+  ShowsListAdapter -up-|> OnSharedPreferenceChangeListener
+  ShowsListAdapter -up-|> BaseAdapter
+  ShowsListAdapter o-- EpisodesCounter : episodesCounter
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
