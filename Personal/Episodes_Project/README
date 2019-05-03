@@ -1,0 +1,7 @@
+    This project was a team school project I undertook with 4 other team members. The task was to upgrade 
+an existing open-source android project i.e make it better and more user-friendly. The aim was to learn 
+and practice Agile development teamwork practices. The project we chose was called EPISODES. This app 
+allowed users to search for and save TV shows, and keep track of episodes that been watched. We added a few 
+new features like sorting, filtering, adding reviews, starring, displaying more info about the shows, etc.
+
+    Original repo link: https://github.com/jamienicol/episodes
